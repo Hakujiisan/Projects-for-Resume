@@ -1,0 +1,573 @@
+@import url('https://fonts.googleapis.com/css2?family=Luckiest+Guy&family=Seaweed+Script&display=swap');
+
+/* ОБЩИЕ СТИЛИ - ИДЕНТИЧНЫЕ HISTORY */
+* {
+    transition: background 0.3s, color 0.3s, transform 0.3s, box-shadow 0.3s;
+}
+
+body {
+    margin: 0;
+    font-family: "Luckiest Guy", Arial, sans-serif;
+    display: flex;
+    flex-direction: column;
+    background: #fff;
+    color: #222;
+    min-height: 100vh;
+}
+
+body.night {
+    background: #403f3f;
+    color: #f1f1f1;
+}
+
+.luckiest-guy-regular {
+    font-family: "Luckiest Guy", cursive;
+    font-weight: 400;
+    font-style: normal;
+}
+/* HEADER - ЖЕЛТЫЙ ФОН #f0e68c (ПРЕЖНИЙ) */
+header {
+    padding: 6px;
+    width: 100%;
+    margin: 0;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    gap: 24px;
+    background: #f0e68c !important;
+    position: relative;
+    z-index: 1000;
+}
+
+body.night header {
+    background: #bfb66a !important;
+}
+
+header a {
+    padding: 24px !important;
+    text-decoration: none;
+    color: #333 !important;
+    font-size: 18px !important;
+    display: block;
+    border-radius: 200px;
+    transition: background 0.2s !important;
+    font-family: "Luckiest Guy", cursive !important;
+    font-weight: normal !important;
+    text-transform: none !important;
+    letter-spacing: normal !important;
+    margin: 0 !important;
+    border: none !important;
+    background: transparent !important;
+}
+body.night header a {
+    color: #f1f1f1 !important;
+}
+
+header a.active,
+header a:hover {
+    background: #bbdfd1 !important;
+    color: #333 !important;
+}
+
+body.night header a.active,
+body.night header a:hover {
+    background: #8fafa5 !important;
+    color: #f1f1f1 !important;
+}
+
+header img {
+    width: auto;
+    height: 86px;
+    transition: transform 0.2s;
+    display: block !important;
+}
+
+header img:hover {
+    cursor: pointer;
+    transform: rotate(45deg);
+}
+#theme-toggle {
+    background: none !important;
+    border: none !important;
+    font-size: 1.5rem !important;
+    cursor: pointer;
+    margin-left: 1rem !important;
+    padding: 0 !important;
+    color: inherit !important;
+}
+
+/* FOOTER - ПРЕЖНИЙ */
+footer {
+    font-size: 14px;
+    margin-top: auto;
+    padding: 24px;
+    width: 100%;
+    background: #f0e68c;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+body.night footer {
+    background: #bfb66a;
+    color: #D3D3D3;
+}
+/* PROGRESS BAR - ПРЕЖНИЙ */
+.progress-wrap {
+    position: fixed;
+    left: 0;
+    top: 0;
+    right: 0;
+    height: 8px;
+    pointer-events: none;
+    background: linear-gradient(90deg, rgba(0,0,0,0.04), rgba(255,255,255,0.02));
+    display: block;
+    z-index: 1001;
+}
+
+.progress-bar {
+    height: 100%;
+    width: 0;
+    background: linear-gradient(90deg, #add8e6, #ffb6c1 40%, #ffa07a 100%);
+    transition: width 150ms linear;
+    will-change: width;
+    border-radius: 999px;
+}
+
+body.night .progress-bar {
+    background: linear-gradient(90deg, #7cadbc, #c88189 40%, #c57757 100%);
+}
+
+/* АДАПТИВНОСТЬ - ПРЕЖНЯЯ */
+@media (max-width: 1024px) {
+    header {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 12px;
+        padding: 8px 12px;
+    }
+
+    header img {
+        height: 64px;
+    } header a {
+        padding: 12px !important;
+        font-size: 16px !important;
+        border-radius: 16px;
+    }
+
+    #theme-toggle {
+        font-size: 1.25rem !important;
+        margin-left: 0.5rem !important;
+    }
+
+    footer {
+        padding: 16px;
+        gap: 12px;
+    }
+
+    .progress-wrap {
+        height: 6px;
+    }
+}
+
+@media (max-width: 600px) {
+    html {
+        font-size: 14px;
+    }
+
+    body {
+        align-items: stretch;
+    }
+     header {
+        align-items: center;
+        gap: 8px;
+        padding: 8px;
+    }
+
+    header a {
+        padding: 8px 12px !important;
+        font-size: 15px !important;
+        display: inline-block;
+        border-radius: 12px;
+    }
+
+    header img {
+        height: 48px;
+    }
+
+    header img:hover {
+        transform: none;
+    }
+
+    #theme-toggle {
+        align-self: flex-end;
+        margin-left: 0 !important;
+        margin-top: 4px;
+    }
+
+    footer {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        gap: 8px;
+    }
+
+    .progress-wrap {
+        height: 4px;
+    }
+        header a,
+    #theme-toggle {
+        line-height: 1;
+    }
+}
+
+/* СТИЛИ ДЛЯ КОНТЕНТА СТРАНИЦЫ CARTOON - В СТИЛЕ SPONGEBOB */
+
+/* Цвета из мультфильма SpongeBob */
+:root {
+    /* Основные цвета персонажей */
+    --spongebob-yellow: #ffd90f;    /* Желтый СпанчБоба */
+    --patrick-pink: #ff6b9d;        /* Розовый Патрика */
+    --squidward-blue: #6b8cff;      /* Синий Сквидварда */
+    --sandy-brown: #d2691e;         /* Коричневый Сэнди */
+    --krabs-red: #ff4444;           /* Красный Крабса */
+    --plankton-green: #32cd32;      /* Зеленый Планктона */
+    
+    /* Дополнительные цвета */
+    --bikini-bottom-blue: #87ceeb;  /* Голубой океана */
+    --pineapple-orange: #ffa500;    /* Оранжевый ананаса */
+    --jellyfish-purple: #9370db;    /* Фиолетовый медуз */
+    --krusty-krab-red: #dc143c;     /* Красный Красти Краб */
+}
+
+body {
+    background: #e6f7ff; /* Светло-голубой как океан */
+}
+
+body.night {
+    background: #2c3e50; /* Темно-синий как глубокий океан */
+}
+
+/* Карусель */
+.carousel-img { 
+    height: 400px; 
+    width: 100%; 
+    object-fit: cover; 
+    border-radius: 15px;
+    border: 4px solid var(--spongebob-yellow);
+    box-shadow: 0 8px 20px rgba(255, 217, 15, 0.3);
+}
+
+body.night .carousel-img {
+    border: 4px solid var(--patrick-pink);
+    box-shadow: 0 8px 20px rgba(255, 107, 157, 0.3);
+}
+
+.carousel-caption { 
+    background: rgba(255, 217, 15, 0.9) !important; 
+    border-radius: 10px; 
+    padding: 1rem; 
+    font-family: "Luckiest Guy", cursive;
+    border: 2px solid var(--krusty-krab-red);
+    color: #333;
+}
+
+body.night .carousel-caption {
+    background: rgba(255, 107, 157, 0.9) !important;
+    color: #fff;
+}
+
+/* Карточки персонажей */
+.card { 
+    border-radius: 15px; 
+    border: 3px solid var(--bikini-bottom-blue);
+    box-shadow: 0 4px 15px rgba(135, 206, 235, 0.3);
+    margin-bottom: 1.5rem; 
+    transition: all 0.3s ease;
+    background: #fff8dc; /* Светло-желтый как песок */
+}
+.card:hover { 
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(135, 206, 235, 0.5); 
+}
+
+body.night .card {
+    background: #555;
+    border: 3px solid var(--squidward-blue);
+    box-shadow: 0 4px 15px rgba(107, 140, 255, 0.3);
+}
+
+/* Карточки персонажей с цветами каждого героя */
+.character-card { 
+    transition: all 0.3s ease; 
+    height: 100%; 
+    border-radius: 15px; 
+    scroll-margin-top: 80px; 
+    background: #fff;
+    border: 3px solid;
+}
+
+/* SpongeBob - желтый */
+#spongebob.character-card {
+    border-color: var(--spongebob-yellow);
+    background: #fffacd; /* Светло-желтый */
+}
+
+/* Patrick - розовый */
+#patrick.character-card {
+    border-color: var(--patrick-pink);
+    background: #ffe4e1; /* Светло-розовый */
+}
+
+/* Squidward - синий */
+#squidward.character-card {
+    border-color: var(--squidward-blue);
+    background: #e6f3ff; /* Светло-голубой */
+}
+
+/* Sandy - коричневый */
+#sandy.character-card {
+    border-color: var(--sandy-brown);
+    background: #f5deb3; /* Песочный */
+}
+
+/* Mr. Krabs - красный */
+#krabs.character-card {
+    border-color: var(--krabs-red);
+    background: #ffe6e6; /* Светло-красный */
+}
+
+/* Plankton - зеленый */
+#plankton.character-card {
+    border-color: var(--plankton-green);
+    background: #f0fff0; /* Светло-зеленый */
+}
+
+.character-card:hover { 
+    transform: translateY(-8px);
+    box-shadow: 0 12px 30px rgba(0,0,0,0.2); 
+}
+
+body.night .character-card {
+    background: #666;
+}
+
+.character-img { 
+    width: 150px; 
+    height: 150px; 
+    object-fit: cover; 
+    border: 4px solid var(--spongebob-yellow);
+    box-shadow: 0 4px 15px rgba(0,0,0,0.2); 
+    border-radius: 50%;
+    transition: all 0.3s ease;
+}
+
+.character-img:hover {
+    transform: scale(1.1);
+    border-color: var(--patrick-pink);
+}
+
+body.night .character-img {
+    border: 4px solid var(--squidward-blue);
+}
+
+/* Формы */
+.form-control { 
+    border-radius: 8px; 
+    border: 2px solid var(--bikini-bottom-blue);
+    transition: all 0.3s ease; 
+    background: #fff;
+    color: #333;
+    padding: 10px 12px;
+}
+
+.form-control:focus { 
+    border-color: var(--spongebob-yellow);
+    box-shadow: 0 0 0 0.2rem rgba(255, 217, 15, 0.25);
+    background: #fff;
+}
+
+body.night .form-control {
+    border: 2px solid var(--squidward-blue);
+    background: #666;
+    color: #f1f1f1;
+}
+
+/* Кнопки */
+.btn { 
+    border-radius: 25px; 
+    font-weight: 500; 
+    transition: all 0.3s ease;
+    font-family: "Luckiest Guy", cursive;
+    padding: 10px 20px;
+    border: 2px solid transparent;
+}
+
+.btn:hover { 
+    transform: translateY(-3px);
+    box-shadow: 0 6px 15px rgba(0,0,0,0.2); 
+}
+
+.btn-primary { 
+    background: var(--spongebob-yellow);
+    color: #333;
+    border-color: var(--spongebob-yellow);
+}
+
+.btn-primary:hover {
+    background: #ffed4a;
+    color: #333 !important;
+    border-color: #ffed4a;
+}
+
+body.night .btn-primary {
+    background: var(--patrick-pink);
+    color: #fff;
+    border-color: var(--patrick-pink);
+}
+
+.btn-outline-primary { 
+    background: transparent;
+    border: 2px solid var(--spongebob-yellow);
+    color: #333;
+}
+
+.btn-outline-primary:hover {
+    background: var(--spongebob-yellow);
+    color: #333 !important;
+}
+
+body.night .btn-outline-primary {
+    border: 2px solid var(--patrick-pink);
+    color: var(--patrick-pink);
+}
+
+body.night .btn-outline-primary:hover {
+    background: var(--patrick-pink);
+    color: #fff !important;
+}
+
+/* Секция Intro */
+#intro {
+    background: #fffacd; /* Светло-желтый */
+    border: 3px solid var(--spongebob-yellow);
+}
+
+body.night #intro {
+    background: #555;
+    border: 3px solid var(--patrick-pink);
+}
+
+/* Секция Favorite Form */
+#favorite {
+    background: #e6f7ff; /* Светло-голубой */
+    border: 3px solid var(--bikini-bottom-blue);
+}
+
+body.night #favorite {
+    background: #444;
+    border: 3px solid var(--squidward-blue);
+}
+
+/* Кнопки мини-навигации с цветами персонажей */
+.mini-nav .btn {
+    margin: 2px;
+    transition: all 0.3s ease;
+    border: 2px solid;
+    color: #333;
+    font-weight: bold;
+}
+
+.mini-nav .btn:nth-child(1) { 
+    background: var(--spongebob-yellow);
+    border-color: var(--spongebob-yellow);
+}
+.mini-nav .btn:nth-child(2) { 
+    background: var(--patrick-pink);
+    border-color: var(--patrick-pink);
+    color: #fff;
+}
+.mini-nav .btn:nth-child(3) { 
+    background: var(--squidward-blue);
+    border-color: var(--squidward-blue);
+    color: #fff;
+}
+.mini-nav .btn:nth-child(4) { 
+    background: var(--sandy-brown);
+    border-color: var(--sandy-brown);
+    color: #fff;
+}
+.mini-nav .btn:nth-child(5) { 
+    background: var(--krabs-red);
+    border-color: var(--krabs-red);
+    color: #fff;
+}
+.mini-nav .btn:nth-child(6) { 
+    background: var(--plankton-green);
+    border-color: var(--plankton-green);
+    color: #fff;
+}
+.mini-nav .btn:hover {
+    transform: translateY(-3px);
+    filter: brightness(1.1);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+}
+
+/* Radio buttons стилизация */
+.form-check-input:checked {
+    background-color: var(--spongebob-yellow);
+    border-color: var(--spongebob-yellow);
+}
+
+.form-check-label {
+    font-family: "Luckiest Guy", cursive;
+    color: #333;
+}
+
+body.night .form-check-label {
+    color: #f1f1f1;
+}
+
+/* Убираем возможные конфликты с Bootstrap */
+.navbar {
+    display: none !important;
+}
+
+nav {
+    display: none !important;
+}
+
+/* Обеспечиваем правильный порядок загрузки */
+.main-content {
+    flex: 1;
+    width: 100%;
+}
+
+.change-bg-btn {
+    background-color: #719870;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background-color 0.3s;
+}
+
+.change-bg-btn:hover {
+    background-color: #5a7a5a;
+}
+
+/* Те же самые стили для темы что и в Merch.css */
+body.night {
+    background: #2c3e50;
+    color: #f1f1f1;
+}
+
+body.night header {
+    background: #bfb66a !important;
+}
+
+/* и остальные стили из раздела выше */

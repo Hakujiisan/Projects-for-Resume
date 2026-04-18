@@ -1,0 +1,466 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Description — Advanced JS</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"/>
+  <link href="https://fonts.googleapis.com/css2?family=Luckiest+Guy&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="../style.css">
+  <link rel="stylesheet" href="description.css">
+  
+  <!-- Force header colors and fix API issues -->
+  <style>
+    header {
+        background: #f0e68c !important;
+    }
+    body.night header {
+        background: #bfb66a !important;
+    }
+    
+    /* Fix button colors */
+    .btn-pink {
+        background: var(--patrick-pink);
+        color: white;
+        border-color: var(--patrick-pink);
+    }
+    .btn-pink:hover {
+        background: #ff7fab;
+        border-color: #ff7fab;
+        color: white;
+    }
+    
+    /* Ensure images are visible */
+    .character-img, .gallery-slide img {
+        background: #f8f9fa;
+        min-height: 200px;
+    }
+  </style>
+</head>
+<body class="page-description">
+
+  <header>
+     <img src="../assets/sponge_bob.png" alt="Spongebob">
+    <a href="../index.html">Home</a>
+    <a href="../home&history/history.html">History</a>
+    <a href="../merch&places/merch.html">Merch</a>
+    <a href="../merch&places/places.html">Places</a>
+    <a href="description.html" class="active">Description</a>
+    <a href="cartoon.html">Cartoon</a>
+    <a href="../culture&review/culture.html">Culture</a>
+    <a href="../culture&review/review.html">Review</a>
+    
+     <button id="theme-toggle" aria-label="Toggle night mode">🌙</button>
+  </header>
+
+  <div class="container mt-4">
+
+    <!-- Search Section -->
+    <div class="card p-3 mb-4">
+      <div class="row align-items-center">
+        <div class="col-md-6">
+          <h4 class="mb-2">🔍 Search Content</h4>
+          <p class="text-muted small mb-0">Highlight matching words on this page</p>
+        </div>
+        <div class="col-md-6">
+          <div class="input-group">
+            <input type="text" id="searchInput" class="form-control" placeholder="Enter keyword to highlight...">
+            <button id="searchBtn" class="btn btn-primary">Search</button>
+            <button id="clearSearch" class="btn btn-outline-secondary">Clear</button>
+          </div>
+        </div>
+      </div>
+      <div id="searchResults" class="mt-2 small text-muted"></div>
+    </div>
+
+    <!-- HERO -->
+    <section class="hero text-center p-5 mb-4 rounded">
+      <h1 id="greeting" class="display-5 mb-3 floating">Welcome to the SpongeBob Universe!</h1>
+      <input type="text" id="nameInput" class="form-control w-50 mx-auto mb-3" placeholder="Enter your name"/>
+      <div class="d-flex justify-content-center gap-2 flex-wrap">
+        <button id="sayHiBtn" class="btn btn-warning">Say Hi 👋</button>
+        <button id="voiceGreeting" class="btn btn-info">
+          <i class="fas fa-microphone"></i> Voice Greeting
+        </button>
+        <button id="confettiBtn" class="btn btn-pink">
+          <i class="fas fa-birthday-cake"></i> Celebrate!
+        </button>
+        <button id="loadGifsBtn" class="btn btn-success">
+          <i class="fas fa-sync-alt"></i> Load GIFs
+        </button>
+      </div>
+    </section>
+
+    <!-- STATS -->
+    <section class="card p-4 mb-4">
+      <h2 class="text-center mb-4">SpongeBob by the Numbers</h2>
+      <div class="stats-grid">
+        <div class="stat-card">
+          <span class="number" id="statSeasons">0</span>
+          Seasons
+        </div>
+        <div class="stat-card">
+          <span class="number" id="statEpisodes">0</span>
+          Episodes
+        </div>
+        <div class="stat-card">
+          <span class="number" id="statYears">0</span>
+          Years
+        </div>
+        <div class="stat-card">
+          <span class="number" id="statLanguages">0</span>
+          Languages
+        </div>
+      </div>
+    </section>
+
+    <!-- ABOUT + READ MORE -->
+    <section class="card p-4 mb-4">
+      <h2>About the Show</h2>
+      <p id="shortText">
+        <strong>SpongeBob SquarePants</strong> is a cheerful series about underwater adventures and friendship.
+      </p>
+      <p id="hiddenText" style="display:none;">
+        SpongeBob works at the Krusty Krab and lives in a pineapple under the sea. His best friend Patrick and
+        clever squirrel Sandy often join his crazy adventures that teach humor and optimism. The show has been 
+        entertaining audiences since 1999 with its unique blend of humor, heart, and underwater antics.
+      </p>
+      <button id="readMoreBtn" class="btn btn-primary mt-2">Read More</button>
+    </section>
+
+    <!-- CHARACTERS -->
+    <section class="card p-4 mb-4">
+      <h2 class="text-center mb-4">Meet the Characters</h2>
+      <div class="character-grid">
+        <div class="character-card" data-character="spongebob">
+          <img src="../front_assignment2/bob.jpg" alt="SpongeBob" class="character-img" onerror="this.src='https://via.placeholder.com/200x150/ffd90f/000?text=SpongeBob'">
+          <div class="info">
+            <h5>SpongeBob</h5>
+            <p class="small mb-0">The optimistic fry cook</p>
+            <div class="gif-indicator"></div>
+          </div>
+        </div>
+        <div class="character-card" data-character="patrick">
+          <img src="../front_assignment2/patrick.jpg" alt="Patrick" class="character-img" onerror="this.src='https://via.placeholder.com/200x150/ff6b9d/fff?text=Patrick'">
+          <div class="info">
+            <h5>Patrick</h5>
+            <p class="small mb-0">The best starfish friend</p>
+            <div class="gif-indicator"></div>
+          </div>
+        </div>
+        <div class="character-card" data-character="squidward">
+          <img src="../front_assignment2/sqrd.jpg" alt="Squidward" class="character-img" onerror="this.src='https://via.placeholder.com/200x150/87ceeb/000?text=Squidward'">
+          <div class="info">
+            <h5>Squidward</h5>
+            <p class="small mb-0">The grumpy neighbor</p>
+            <div class="gif-indicator"></div>
+          </div>
+        </div>
+        <div class="character-card" data-character="mrkrabs">
+          <img src="../front_assignment2/krabs.jpg" alt="Mr. Krabs" class="character-img" onerror="this.src='https://via.placeholder.com/200x150/ff4444/fff?text=Mr.Krabs'">
+          <div class="info">
+            <h5>Mr. Krabs</h5>
+            <p class="small mb-0">Money-loving restaurant owner</p>
+            <div class="gif-indicator"></div>
+          </div>
+        </div>
+        <div class="character-card" data-character="sandy">
+          <img src="../front_assignment2/sandy.jpg" alt="Sandy" class="character-img" onerror="this.src='https://via.placeholder.com/200x150/8b4513/fff?text=Sandy'">
+          <div class="info">
+            <h5>Sandy</h5>
+            <p class="small mb-0">The scientific squirrel</p>
+            <div class="gif-indicator"></div>
+          </div>
+        </div>
+        <div class="character-card" data-character="plankton">
+          <img src="../front_assignment2/plankton.jpg" alt="Plankton" class="character-img" onerror="this.src='https://via.placeholder.com/200x150/32cd32/fff?text=Plankton'">
+          <div class="info">
+            <h5>Plankton</h5>
+            <p class="small mb-0">The tiny villain</p>
+            <div class="gif-indicator"></div>
+          </div>
+        </div>
+      </div>
+      <div class="text-center mt-3">
+        <button id="toggleGifsBtn" class="btn btn-outline-secondary btn-sm">
+          <i class="fas fa-film"></i> Toggle GIFs/Images
+        </button>
+      </div>
+    </section>
+
+    <!-- GALLERY -->
+    <section class="card p-4 mb-4 text-center">
+      <h2>Bikini Bottom Gallery</h2>
+      <div class="gallery-container">
+        <div class="gallery-slider" id="gallerySlider">
+          <div class="gallery-slide">
+            <img src="../front_assignment2/krusty.jpg" class="img-fluid rounded" alt="Krusty Krab" onerror="this.src='https://via.placeholder.com/600x400/ffd90f/000?text=Krusty+Krab'">
+          </div>
+          <div class="gallery-slide">
+            <img src="../front_assignment2/JellyFish.jpg" class="img-fluid rounded" alt="Jellyfish Fields" onerror="this.src='https://via.placeholder.com/600x400/87ceeb/fff?text=Jellyfish+Fields'">
+          </div>
+          <div class="gallery-slide">
+            <img src="../front_assignment2/bob.jpg" class="img-fluid rounded" alt="SpongeBob" onerror="this.src='https://via.placeholder.com/600x400/32cd32/fff?text=SpongeBob'">
+          </div>
+          <div class="gallery-slide">
+            <img src="../front_assignment2/general.jpg" class="img-fluid rounded" alt="General" onerror="this.src='https://via.placeholder.com/600x400/ff4444/fff?text=General'">
+          </div>
+        </div>
+        <button class="gallery-btn prev">
+          <i class="fas fa-chevron-left"></i>
+        </button>
+        <button class="gallery-btn next">
+          <i class="fas fa-chevron-right"></i>
+        </button>
+      </div>
+      <div class="gallery-nav" id="galleryNav">
+        <div class="gallery-dot active" data-index="0"></div>
+        <div class="gallery-dot" data-index="1"></div>
+        <div class="gallery-dot" data-index="2"></div>
+        <div class="gallery-dot" data-index="3"></div>
+      </div>
+    </section>
+
+    <!-- RANDOM FACT -->
+    <section class="card p-4 mb-4 text-center">
+      <h2>Fun Facts Generator 🧠</h2>
+      <p id="factArea">Click below to learn something new about SpongeBob!</p>
+      <button id="factBtn" class="btn btn-success">Show Random Fact</button>
+    </section>
+
+    <!-- EPISODES -->
+    <section class="card p-4 mb-4">
+      <h2 class="mb-3">Popular SpongeBob Episodes</h2>
+      <div class="row g-3" id="episodesList">
+        <!-- Episodes will be loaded from JavaScript -->
+      </div>
+    </section>
+
+    <!-- FORM -->
+    <section class="card p-4 mb-4">
+      <h2>Suggest an Episode</h2>
+      <form id="suggestForm" class="mx-auto" style="max-width:600px;">
+        <input type="text" class="form-control mb-2" id="name" placeholder="Your Name" required/>
+        <input type="text" class="form-control mb-2" id="episode" placeholder="Episode Title" required/>
+        <textarea class="form-control mb-3" id="reason" rows="3" placeholder="Why do you love it?"></textarea>
+        <div class="d-grid gap-2">
+          <button type="submit" class="btn btn-primary">Send Suggestion</button>
+          <button type="button" id="resetBtn" class="btn btn-secondary">Reset Form</button>
+        </div>
+      </form>
+      <p id="formMessage" class="text-center fw-bold mt-2"></p>
+    </section>
+
+    <!-- FAQ -->
+    <section class="card p-4 mb-4">
+      <h2 class="text-center mb-4">Frequently Asked Questions</h2>
+      <div class="faq-improved">
+        <div class="faq-item-improved">
+          <div class="faq-question-improved">
+            <div class="faq-header">
+              <span class="faq-icon-improved">🤔</span>
+              <h4 class="h5 mb-0">Do I need to watch in order?</h4>
+            </div>
+            <span class="faq-toggle">➕</span>
+          </div>
+          <div class="faq-answer-improved">
+            <div class="faq-answer-content">
+              <p class="mb-0">No, most episodes are standalone stories. You can jump in anywhere and enjoy the fun!</p>
+            </div>
+          </div>
+        </div>
+        <div class="faq-item-improved">
+          <div class="faq-question-improved">
+            <div class="faq-header">
+              <span class="faq-icon-improved">👨‍👩‍👧‍👦</span>
+              <h4 class="h5 mb-0">Is it kid-friendly?</h4>
+            </div>
+            <span class="faq-toggle">➕</span>
+          </div>
+          <div class="faq-answer-improved">
+            <div class="faq-answer-content">
+              <p class="mb-0">Yes! SpongeBob is designed for kids and families with wholesome humor and positive messages.</p>
+            </div>
+          </div>
+        </div>
+        <div class="faq-item-improved">
+          <div class="faq-question-improved">
+            <div class="faq-header">
+              <span class="faq-icon-improved">⏱️</span>
+              <h4 class="h5 mb-0">How long is one episode?</h4>
+            </div>
+            <span class="faq-toggle">➕</span>
+          </div>
+          <div class="faq-answer-improved">
+            <div class="faq-answer-content">
+              <p class="mb-0">About 11 minutes — quick and fun! Perfect for short viewing sessions.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </div>
+
+  <!-- Toast Container -->
+  <div class="toast-container" id="toastContainer"></div>
+
+  <footer>
+    <div>Designed by Motivation Time members:</div>
+    <div>Zhandaulet Ermekov</div>
+    <div>Alan Kissamenov</div>
+    <div>Danila Bussygin</div>
+    <div>Dana Bekbosyn</div>
+  </footer>
+
+  <div class="progress-wrap" aria-hidden="true">
+    <div class="progress-bar" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0"></div>
+  </div>
+
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="js/unified.js"></script>
+
+  <!-- Fix for API and image issues -->
+  <script>
+  document.addEventListener('DOMContentLoaded', function() {
+      console.log('🔄 Checking images and API functionality...');
+      
+      // Check if images loaded successfully
+      const images = document.querySelectorAll('img');
+      images.forEach(img => {
+          img.addEventListener('error', function() {
+              console.log('❌ Image failed to load:', this.src);
+              const character = this.closest('.character-card')?.dataset.character;
+              if (character) {
+                  const colors = {
+                      'spongebob': 'ffd90f', 'patrick': 'ff6b9d', 'squidward': '87ceeb',
+                      'mrkrabs': 'ff4444', 'sandy': '8b4513', 'plankton': '32cd32'
+                  };
+                  this.src = `https://via.placeholder.com/200x150/${colors[character] || '666'}/fff?text=${character.charAt(0).toUpperCase() + character.slice(1)}`;
+              }
+          });
+          
+          img.addEventListener('load', function() {
+              console.log('✅ Image loaded successfully:', this.src);
+          });
+      });
+
+      // Test API connectivity
+      async function testAPI() {
+          try {
+              const testUrl = 'https://tenor.googleapis.com/v2/search?q=spongebob&key=AIzaSyCQaEFcAOchzzxGrgsLhXl1ruFGVpbWCAo&limit=1';
+              const response = await fetch(testUrl);
+              if (response.ok) {
+                  console.log('✅ GIF API is working');
+                  return true;
+              } else {
+                  console.log('❌ GIF API returned error:', response.status);
+                  return false;
+              }
+          } catch (error) {
+              console.log('❌ GIF API connection failed:', error.message);
+              return false;
+          }
+      }
+
+      // Test API on load
+      setTimeout(testAPI, 1000);
+  });
+  </script>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="js/unified.js"></script>
+  <script src="../home&history/home.js"></script>
+  <script src="../script.js"></script>
+
+  <script>
+// ===== DESCRIPTION PAGE FIXES =====
+document.addEventListener('DOMContentLoaded', function() {
+    console.log('🔄 Initializing Description Page Fixes...');
+    
+    // Fix Read More functionality
+    const readMoreBtn = document.getElementById('readMoreBtn');
+    const hiddenText = document.getElementById('hiddenText');
+    
+    if (readMoreBtn && hiddenText) {
+        console.log('✅ Read More elements found');
+        readMoreBtn.addEventListener('click', function() {
+            console.log('📖 Read More button clicked');
+            const isVisible = hiddenText.style.display === 'block';
+            
+            if (isVisible) {
+                hiddenText.style.display = 'none';
+                readMoreBtn.textContent = 'Read More';
+                readMoreBtn.classList.remove('btn-secondary');
+                readMoreBtn.classList.add('btn-primary');
+            } else {
+                hiddenText.style.display = 'block';
+                readMoreBtn.textContent = 'Read Less';
+                readMoreBtn.classList.remove('btn-primary');
+                readMoreBtn.classList.add('btn-secondary');
+            }
+        });
+    } else {
+        console.log('❌ Read More elements not found');
+    }
+    
+    // Fix FAQ functionality
+    const faqItems = document.querySelectorAll('.faq-item-improved');
+    
+    if (faqItems.length > 0) {
+        console.log(`✅ Found ${faqItems.length} FAQ items`);
+        
+        faqItems.forEach((item, index) => {
+            const question = item.querySelector('.faq-question-improved');
+            const answer = item.querySelector('.faq-answer-improved');
+            const toggle = item.querySelector('.faq-toggle');
+            
+            if (question && answer && toggle) {
+                // Set initial state
+                answer.style.maxHeight = '0';
+                answer.style.padding = '0 20px';
+                
+                question.addEventListener('click', () => {
+                    console.log(`📋 FAQ item ${index} clicked`);
+                    
+                    const isActive = answer.style.maxHeight !== '0px';
+                    
+                    // Close all other items
+                    faqItems.forEach(otherItem => {
+                        if (otherItem !== item) {
+                            const otherAnswer = otherItem.querySelector('.faq-answer-improved');
+                            const otherToggle = otherItem.querySelector('.faq-toggle');
+                            if (otherAnswer) {
+                                otherAnswer.style.maxHeight = '0';
+                                otherAnswer.style.padding = '0 20px';
+                            }
+                            if (otherToggle) otherToggle.textContent = '➕';
+                        }
+                    });
+                    
+                    // Toggle current item
+                    if (isActive) {
+                        answer.style.maxHeight = '0';
+                        answer.style.padding = '0 20px';
+                        toggle.textContent = '➕';
+                    } else {
+                        answer.style.maxHeight = answer.scrollHeight + 'px';
+                        answer.style.padding = '0 20px 15px 20px';
+                        toggle.textContent = '➖';
+                    }
+                });
+            }
+        });
+    } else {
+        console.log('❌ FAQ items not found');
+    }
+    
+    console.log('✅ Description Page fixes applied');
+});
+</script>
+<script src="js/unified.js"></script>
+
+</body>
+</html>

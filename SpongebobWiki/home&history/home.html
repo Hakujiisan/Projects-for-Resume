@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Home Spongepage</title>
+    <link rel="stylesheet" href="../style.css">
+    <link rel="stylesheet" href="home.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<body>
+    <header>
+        <img src="../assets/sponge_bob.png" alt="Spongebob">
+        <a href="home.html" class="active">Home</a>
+        <a href="history.html">History</a>
+        <a href="../merch&places/merch.html">Merch</a>
+        <a href="../merch&places/places.html">Places</a>
+        <a href="../description&cartoon/description.html">Description</a>
+        <a href="../description&cartoon/cartoon.html">Cartoon</a>
+        <a href="../culture&review/culture.html">Culture</a>
+        <a href="../culture&review/review.html">Review</a>
+        <a href="../user.html" id="account-link" style="display:none"></a>
+        <button id="theme-toggle" aria-label="Toggle night mode">🌙</button>
+    </header>
+
+    <audio src="../assets/sound.mp3"></audio>
+
+    <div class="main-content">
+        <h1>
+            Welcome to the SpongeBob Squarepants Wiki Homepage!
+        </h1>
+
+        <hr>
+
+        <div class="info">
+            This site about SpongeBob and his friends <br>
+            In the navigation bar you can find the next information: <br>
+            <div class="card-container">
+                <div class="card">
+                    <img class="card-img" alt="SpongeImg" src="">
+                    <div class="card-title">History</div>
+                    <div class="card-text">Learn about the origins and evolution of SpongeBob SquarePants.</div>
+                    <button class="card-btn" onclick="location.href='history.html'">see more</button>
+                </div>
+                <div class="card">
+                    <img class="card-img" alt="SpongeImg" src="">
+                    <div class="card-title">Merch</div>
+                    <div class="card-text">Discover official SpongeBob merchandise and collectibles.</div>
+                    <button class="card-btn" onclick="location.href='../merch&places/merch.html'">see more</button>
+                </div>
+                <div class="card">
+                    <img class="card-img" alt="SpongeImg" src="">
+                    <div class="card-title">Places</div>
+                    <div class="card-text">Explore iconic locations from Bikini Bottom and beyond.</div>
+                    <button class="card-btn" onclick="location.href='../merch&places/places.html'">see more</button>
+                </div>
+                <div class="card">
+                    <img class="card-img" alt="SpongeImg" src="">
+                    <div class="card-title">Description</div>
+                    <div class="card-text">Get a detailed description of SpongeBob and his friends.</div>
+                    <button class="card-btn" onclick="location.href='../description&cartoon/description.html'">see more</button>
+                </div>
+                <div class="card">
+                    <img class="card-img" alt="SpongeImg" src="">
+                    <div class="card-title">Culture</div>
+                    <div class="card-text">Discover the cultural impact of SpongeBob worldwide.</div>
+                    <button class="card-btn" onclick="location.href='../culture&review/culture.html'">see more</button>
+                </div>
+                <div class="card">
+                    <img class="card-img" alt="SpongeImg" src="">
+                    <div class="card-title">Review</div>
+                    <div class="card-text">Review about all Spongebob series and it's rating.</div>
+                    <button class="card-btn" onclick="location.href='../culture&review/review.html'">see more</button>
+                </div>
+            </div>
+
+            <div class="facts">
+                Did you know?
+                <br>
+                <span>«</span>
+
+                    <div class="citation">
+                        SpongeBob was originally going to be named SpongeBoy, but the name was already trademarked
+                    </div>
+
+                    <div class="citation">
+                        Tom Kenny, the voice of SpongeBob, also voices Gary, the French Narrator, and the Mayor of Bikini Bottom
+                    </div>
+
+                    <div class="citation">
+                        Squidward only has six tentacles, not eight, because the animators thought eight looked too bulky
+                    </div>
+
+                <span>»</span>
+            </div>
+        </div>
+
+        <form>
+            <div class="form-title">Leave us feedback:</div>
+
+            <div class="email-form">
+                <label>
+                    <input type="email" placeholder="Enter your email" required>
+                </label>
+            </div>
+
+            <div class="feedback-form">
+                <label>
+                    <textarea placeholder="Leave your feedback" required></textarea>
+                </label>
+            </div>
+
+            <button class="submit-btn" disabled>Send</button>
+        </form>
+
+        <div class="pop-up">
+            <div class="pop-up-main">Thanks to using our site!</div>
+            <div class="pop-up-close">X</div>
+            <div class="pop-up-text"> Allow us to send you mail</div>
+            <div>
+                <button class="pop-up-btn-allow">OK</button>
+                <button class="pop-up-btn-deny">No, thanks</button>
+            </div>
+        </div>
+
+    </div>
+
+    <footer>
+        <div>Designed by Motivation Time members:</div>
+        <div>Zhandaulet Ermekov</div>
+        <div>Alan Kissamenov</div>
+        <div>Danila Bussygin</div>
+        <div>Dana Bekbosyn</div>
+    </footer>
+
+    <div class="progress-wrap" aria-hidden="true">
+        <div class="progress-bar" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0"></div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
+    <script src="home.js"></script>
+    <script src="../script.js"></script>
+
+</body>
+</html>

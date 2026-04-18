@@ -1,0 +1,979 @@
+/* ===== Base Styles ===== */
+:root {
+  --spongebob-yellow: #ffd90f;
+  --patrick-pink: #ff6b9d;
+  --squidward-blue: #6b8cff;
+  --sandy-brown: #d2691e;
+  --krabs-red: #ff4444;
+  --plankton-green: #32cd32;
+  --bikini-bottom-blue: #87ceeb;
+  --pineapple-orange: #ffa500;
+  --jellyfish-purple: #9370db;
+  --krusty-krab-red: #dc143c;
+}
+
+* {
+  transition: background 0.3s, color 0.3s, transform 0.3s, box-shadow 0.3s;
+}
+
+body {
+  margin: 0;
+  font-family: "Luckiest Guy", Arial, sans-serif;
+  display: flex;
+  flex-direction: column;
+  background: #e6f7ff;
+  color: #222;
+  min-height: 100vh;
+}
+
+body.night {
+  background: #2c3e50;
+  color: #f1f1f1;
+}
+
+.luckiest-guy-regular {
+  font-family: "Luckiest Guy", cursive;
+  font-weight: 400;
+  font-style: normal;
+}
+
+/* HEADER */
+header {
+  padding: 6px;
+  width: 100%;
+  margin: 0;
+  box-sizing: border-box;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  gap: 24px;
+  background: #f0e68c !important;
+  position: relative;
+  z-index: 1000;
+}
+
+body.night header {
+  background: #bfb66a !important;
+}
+
+header a {
+  padding: 24px !important;
+  text-decoration: none;
+  color: #333 !important;
+  font-size: 18px !important;
+  display: block;
+  border-radius: 200px;
+  transition: background 0.2s !important;
+  font-family: "Luckiest Guy", cursive !important;
+  font-weight: normal !important;
+  text-transform: none !important;
+  letter-spacing: normal !important;
+  margin: 0 !important;
+  border: none !important;
+  background: transparent !important;
+}
+
+body.night header a {
+  color: #f1f1f1 !important;
+}
+
+header a.active,
+header a:hover {
+  background: #bbdfd1 !important;
+  color: #333 !important;
+}
+
+body.night header a.active,
+body.night header a:hover {
+  background: #8fafa5 !important;
+  color: #f1f1f1 !important;
+}
+
+header img {
+  width: auto;
+  height: 86px;
+  transition: transform 0.2s;
+  display: block !important;
+}
+
+header img:hover {
+  cursor: pointer;
+  transform: rotate(45deg);
+}
+
+#theme-toggle {
+  background: none !important;
+  border: none !important;
+  font-size: 1.5rem !important;
+  cursor: pointer;
+  margin-left: 1rem !important;
+  padding: 0 !important;
+  color: inherit !important;
+}
+
+/* FOOTER */
+footer {
+  font-size: 14px;
+  margin-top: auto;
+  padding: 24px;
+  width: 100%;
+  background: #f0e68c;
+  box-sizing: border-box;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+body.night footer {
+  background: #bfb66a;
+  color: #D3D3D3;
+}
+
+/* PROGRESS BAR */
+.progress-wrap {
+  position: fixed;
+  left: 0;
+  top: 0;
+  right: 0;
+  height: 8px;
+  pointer-events: none;
+  background: linear-gradient(90deg, rgba(0,0,0,0.04), rgba(255,255,255,0.02));
+  display: block;
+  z-index: 1001;
+}
+
+.progress-bar {
+  height: 100%;
+  width: 0;
+  background: linear-gradient(90deg, #add8e6, #ffb6c1 40%, #ffa07a 100%);
+  transition: width 150ms linear;
+  will-change: width;
+  border-radius: 999px;
+}
+
+body.night .progress-bar {
+  background: linear-gradient(90deg, #7cadbc, #c88189 40%, #c57757 100%);
+}
+
+/* Content Styles */
+h1 { 
+  font-size: 2.5rem; 
+  color: #333; 
+  font-family: "Luckiest Guy", cursive;
+}
+
+h2 { 
+  font-size: 2rem; 
+  color: #333; 
+  font-family: "Luckiest Guy", cursive;
+}
+
+h3, h4 { 
+  font-size: 1.75rem; 
+  color: #333; 
+  font-family: "Luckiest Guy", cursive;
+}
+
+body.night h1,
+body.night h2,
+body.night h3,
+body.night h4 {
+  color: #f1f1f1;
+}
+
+p, li { 
+  font-size: 1rem; 
+  line-height: 1.6; 
+}
+
+/* Hero секция */
+.hero {
+  background: var(--spongebob-yellow);
+  color: #333; 
+  margin-bottom: 2rem; 
+  border-radius: 15px;
+  border: 4px solid var(--krusty-krab-red);
+  box-shadow: 0 8px 20px rgba(255, 217, 15, 0.3);
+}
+
+body.night .hero {
+  background: var(--patrick-pink);
+  color: #fff;
+  border: 4px solid var(--squidward-blue);
+}
+
+/* Карточки с цветами персонажей */
+.card {
+  border-radius: 15px; 
+  border: 3px solid;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+  margin-bottom: 1.5rem;
+  transition: all 0.3s ease;
+  background: #fff;
+}
+
+.card:hover { 
+  transform: translateY(-5px); 
+  box-shadow: 0 8px 25px rgba(0,0,0,0.2); 
+}
+
+/* Разные цвета для разных секций */
+.card:nth-child(2) {
+  border-color: var(--spongebob-yellow);
+  background: #fffacd;
+}
+
+.card:nth-child(3) {
+  border-color: var(--bikini-bottom-blue);
+  background: #e6f7ff;
+}
+
+.card:nth-child(4) {
+  border-color: var(--plankton-green);
+  background: #f0fff0;
+}
+
+.card:nth-child(5) {
+  border-color: var(--patrick-pink);
+  background: #ffe4e1;
+}
+
+.card:nth-child(6) {
+  border-color: var(--squidward-blue);
+  background: #e6f3ff;
+}
+
+body.night .card {
+  background: #555;
+}
+
+body.night .card:nth-child(2) {
+  border-color: var(--patrick-pink);
+}
+
+body.night .card:nth-child(3) {
+  border-color: var(--squidward-blue);
+}
+
+body.night .card:nth-child(4) {
+  border-color: var(--plankton-green);
+}
+
+body.night .card:nth-child(5) {
+  border-color: var(--spongebob-yellow);
+}
+
+body.night .card:nth-child(6) {
+  border-color: var(--bikini-bottom-blue);
+}
+
+/* Stats Grid */
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1rem;
+}
+
+.stat-card {
+  background: white;
+  border-radius: 10px;
+  padding: 1rem;
+  text-align: center;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+.stat-card .number {
+  display: block;
+  font-size: 2rem;
+  font-weight: bold;
+  color: var(--spongebob-yellow);
+}
+
+body.night .stat-card {
+  background: #666;
+}
+
+body.night .stat-card .number {
+  color: var(--patrick-pink);
+}
+
+/* Character Grid */
+.character-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+}
+
+.character-card {
+  background: white;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  transition: all 0.3s ease;
+}
+
+.character-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+}
+
+.character-img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+
+.character-card .info {
+  padding: 1rem;
+}
+
+.gif-indicator {
+  font-size: 0.8rem;
+  color: #666;
+  margin-top: 5px;
+}
+
+body.night .character-card {
+  background: #666;
+}
+
+/* Gallery */
+.gallery-container {
+  position: relative;
+  margin: 0 auto;
+  max-width: 800px;
+}
+
+.gallery-slider {
+  display: flex;
+  overflow: hidden;
+  border-radius: 10px;
+}
+
+.gallery-slide {
+  min-width: 100%;
+  transition: transform 0.5s ease;
+}
+
+.gallery-slide img {
+  width: 100%;
+  height: 400px;
+  object-fit: cover;
+}
+
+.gallery-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(0,0,0,0.5);
+  color: white;
+  border: none;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  z-index: 10;
+}
+
+.gallery-btn.prev {
+  left: 10px;
+}
+
+.gallery-btn.next {
+  right: 10px;
+}
+
+.gallery-nav {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 15px;
+}
+
+.gallery-dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: #ccc;
+  cursor: pointer;
+}
+
+.gallery-dot.active {
+  background: var(--spongebob-yellow);
+}
+
+/* FAQ */
+.faq-item-improved {
+  border-radius: 10px;
+  overflow: hidden;
+  margin-bottom: 15px;
+  background: var(--spongebob-yellow);
+}
+
+.faq-item-improved:nth-child(2) {
+  background: var(--patrick-pink);
+}
+
+.faq-item-improved:nth-child(3) {
+  background: var(--squidward-blue);
+}
+
+.faq-question-improved {
+  padding: 15px 20px;
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.faq-header {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.faq-answer-improved {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.3s ease;
+  background: rgba(255,255,255,0.2);
+}
+
+.faq-answer-improved.active {
+  max-height: 200px;
+}
+
+.faq-answer-content {
+  padding: 0 20px 15px;
+}
+
+/* Night mode for FAQ */
+body.night .faq-item-improved {
+  background: var(--patrick-pink);
+}
+
+body.night .faq-item-improved:nth-child(2) {
+  background: var(--squidward-blue);
+}
+
+body.night .faq-item-improved:nth-child(3) {
+  background: var(--plankton-green);
+}
+
+/* Buttons */
+.btn { 
+  border-radius: 25px; 
+  font-weight: 500; 
+  transition: all .3s ease;
+  font-family: "Luckiest Guy", cursive;
+  padding: 10px 20px;
+  border: 2px solid transparent;
+}
+
+.btn:hover { 
+  transform: translateY(-3px); 
+  box-shadow: 0 6px 15px rgba(0,0,0,0.2); 
+}
+
+#sayHiBtn {
+  background: var(--spongebob-yellow);
+  color: #333;
+  border-color: var(--spongebob-yellow);
+}
+
+#sayHiBtn:hover {
+  background: #ffed4a;
+  border-color: #ffed4a;
+}
+
+#themeToggle {
+  background: var(--squidward-blue);
+  color: #fff;
+  border-color: var(--squidward-blue);
+}
+
+#themeToggle:hover {
+  background: #7d9bff;
+  border-color: #7d9bff;
+}
+
+#readMoreBtn {
+  background: var(--plankton-green);
+  color: #fff;
+  border-color: var(--plankton-green);
+}
+
+#readMoreBtn:hover {
+  background: #37e037;
+  border-color: #37e037;
+}
+
+#factBtn {
+  background: var(--patrick-pink);
+  color: #fff;
+  border-color: var(--patrick-pink);
+}
+
+#factBtn:hover {
+  background: #ff7fab;
+  border-color: #ff7fab;
+}
+
+.btn-primary {
+  background: var(--krabs-red);
+  color: #fff;
+  border-color: var(--krabs-red);
+}
+
+.btn-primary:hover {
+  background: #ff6666;
+  border-color: #ff6666;
+  color: #fff !important;
+}
+
+.btn-secondary {
+  background: var(--sandy-brown);
+  color: #fff;
+  border-color: var(--sandy-brown);
+}
+
+.btn-secondary:hover {
+  background: #da7c3a;
+  border-color: #da7c3a;
+  color: #fff;
+}
+
+/* Night mode buttons */
+body.night #sayHiBtn {
+  background: var(--patrick-pink);
+  border-color: var(--patrick-pink);
+}
+
+body.night #themeToggle {
+  background: var(--squidward-blue);
+  border-color: var(--squidward-blue);
+}
+
+body.night #readMoreBtn {
+  background: var(--plankton-green);
+  border-color: var(--plankton-green);
+}
+
+body.night #factBtn {
+  background: var(--spongebob-yellow);
+  color: #333;
+  border-color: var(--spongebob-yellow);
+}
+
+body.night .btn-primary {
+  background: var(--krabs-red);
+  border-color: var(--krabs-red);
+}
+
+body.night .btn-secondary {
+  background: var(--sandy-brown);
+  border-color: var(--sandy-brown);
+}
+
+/* Forms */
+.form-control {
+  border-radius: 8px; 
+  border: 2px solid var(--bikini-bottom-blue);
+  transition: all .3s ease;
+  background: #fff;
+  color: #333;
+}
+
+.form-control:focus { 
+  border-color: var(--spongebob-yellow);
+  box-shadow: 0 0 0 .2rem rgba(255, 217, 15, 0.25);
+}
+
+body.night .form-control {
+  border: 2px solid var(--squidward-blue);
+  background: #666;
+  color: #f1f1f1;
+}
+
+/* Toast */
+.toast-container {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  z-index: 1055;
+}
+
+.toast {
+  background: white;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+  overflow: hidden;
+  margin-bottom: 10px;
+}
+
+body.night .toast {
+  background: #555;
+  color: #f1f1f1;
+}
+
+/* Auth buttons */
+.auth-buttons {
+  display: flex;
+  gap: 10px;
+}
+
+/* Floating animation */
+.floating {
+  animation: floating 3s ease-in-out infinite;
+}
+
+@keyframes floating {
+  0% { transform: translate(0, 0px); }
+  50% { transform: translate(0, -10px); }
+  100% { transform: translate(0, 0px); }
+}
+
+/* АДАПТИВНОСТЬ */
+@media (max-width: 1024px) {
+  header {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 12px;
+    padding: 8px 12px;
+  }
+
+  header img {
+    height: 64px;
+  }
+
+  header a {
+    padding: 12px !important;
+    font-size: 16px !important;
+    border-radius: 16px;
+  }
+
+  #theme-toggle {
+    font-size: 1.25rem !important;
+    margin-left: 0.5rem !important;
+  }
+
+  footer {
+    padding: 16px;
+    gap: 12px;
+  }
+
+  .progress-wrap {
+    height: 6px;
+  }
+
+  .stats-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .character-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .hero { 
+    padding: 2rem 1rem !important; 
+  }
+}
+
+@media (max-width: 600px) {
+  html {
+    font-size: 14px;
+  }
+
+  body {
+    align-items: stretch;
+  }
+
+  header {
+    align-items: center;
+    gap: 8px;
+    padding: 8px;
+  }
+
+  header a {
+    padding: 8px 12px !important;
+    font-size: 15px !important;
+    display: inline-block;
+    border-radius: 12px;
+  }
+
+  header img {
+    height: 48px;
+  }
+
+  header img:hover {
+    transform: none;
+  }
+
+  #theme-toggle {
+    align-self: flex-end;
+    margin-left: 0 !important;
+    margin-top: 4px;
+  }
+
+  footer {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 8px;
+  }
+
+  .progress-wrap {
+    height: 4px;
+  }
+
+  header a,
+  #theme-toggle {
+    line-height: 1;
+  }
+
+  .stats-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .character-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .gallery-slide img {
+    height: 250px;
+  }
+
+  .btn {
+    padding: 6px 16px;
+    font-size: 14px;
+  }
+
+  h1 { font-size: 2rem; }
+  h2 { font-size: 1.75rem; }
+  h3, h4 { font-size: 1.5rem; }
+}
+
+.change-bg-btn {
+    background-color: #719870;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background-color 0.3s;
+}
+
+.change-bg-btn:hover {
+    background-color: #5a7a5a;
+}
+
+/* Те же самые стили для темы что и в Merch.css */
+body.night {
+    background: #2c3e50;
+    color: #f1f1f1;
+}
+
+body.night header {
+    background: #bfb66a !important;
+}
+
+/* ===== ОБЩИЕ СТИЛИ ТЕМЫ (добавь в начало Merch.css) ===== */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    transition: background 0.3s, color 0.3s, border-color 0.3s;
+}
+
+/* Светлая тема (по умолчанию) */
+body {
+    background: #f7fafc;
+    color: #111;
+    font-family: "Luckiest Guy", Arial, sans-serif;
+    min-height: 100vh;
+}
+
+/* Темная тема */
+body.night {
+    background: #2c3e50;
+    color: #f1f1f1;
+}
+
+/* ХЕДЕР */
+header {
+    padding: 6px;
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    gap: 24px;
+    background: #f0e68c !important;
+}
+
+body.night header {
+    background: #bfb66a !important;
+}
+
+/* Ссылки меню */
+header a {
+    padding: 24px !important;
+    text-decoration: none;
+    color: #333 !important;
+    font-size: 18px !important;
+    border-radius: 200px;
+    transition: background 0.2s !important;
+    font-family: "Luckiest Guy", cursive !important;
+}
+
+body.night header a {
+    color: #f1f1f1 !important;
+}
+
+/* Активная ссылка меню */
+header a.active,
+header a:hover {
+    background: #bbdfd1 !important;
+    color: #333 !important;
+}
+
+body.night header a.active,
+body.night header a:hover {
+    background: #8fafa5 !important;
+    color: #f1f1f1 !important;
+}
+
+/* Кнопка темы */
+#theme-toggle {
+    background: none !important;
+    border: none !important;
+    font-size: 1.5rem !important;
+    cursor: pointer;
+    padding: 0 !important;
+    color: inherit !important;
+}
+
+/* Read More Section */
+#hiddenText {
+    display: none;
+    margin-top: 15px;
+    padding: 15px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+    border-left: 4px solid var(--spongebob-yellow);
+}
+
+body.night #hiddenText {
+    background: rgba(255, 255, 255, 0.05);
+    border-left: 4px solid var(--patrick-pink);
+}
+
+/* FAQ Improved Styles */
+.faq-improved {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.faq-item-improved {
+    border: 2px solid var(--spongebob-yellow);
+    border-radius: 12px;
+    margin-bottom: 15px;
+    overflow: hidden;
+    background: white;
+    transition: all 0.3s ease;
+}
+
+.faq-item-improved:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(255, 217, 15, 0.2);
+}
+
+.faq-item-improved:nth-child(2) {
+    border-color: var(--patrick-pink);
+}
+
+.faq-item-improved:nth-child(3) {
+    border-color: var(--squidward-blue);
+}
+
+body.night .faq-item-improved {
+    background: #555;
+    border-color: var(--patrick-pink);
+}
+
+body.night .faq-item-improved:nth-child(2) {
+    border-color: var(--squidward-blue);
+}
+
+body.night .faq-item-improved:nth-child(3) {
+    border-color: var(--plankton-green);
+}
+
+.faq-question-improved {
+    padding: 20px;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: transparent;
+    transition: background 0.3s ease;
+}
+
+.faq-question-improved:hover {
+    background: rgba(255, 217, 15, 0.1);
+}
+
+body.night .faq-question-improved:hover {
+    background: rgba(255, 107, 157, 0.1);
+}
+
+.faq-header {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    flex: 1;
+}
+
+.faq-icon-improved {
+    font-size: 1.5rem;
+    width: 40px;
+    text-align: center;
+}
+
+.faq-toggle {
+    font-size: 1.2rem;
+    font-weight: bold;
+    transition: transform 0.3s ease;
+    margin-left: 15px;
+}
+
+.faq-answer-improved {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.5s ease, padding 0.3s ease;
+    background: rgba(255, 255, 255, 0.05);
+}
+
+.faq-answer-content {
+    padding: 0 0 20px 0;
+    opacity: 0;
+    transition: opacity 0.3s ease 0.2s;
+}
+
+/* Search Highlight */
+.search-highlight {
+    background-color: yellow;
+    color: black;
+    padding: 2px 4px;
+    border-radius: 3px;
+    font-weight: bold;
+}
+
+body.night .search-highlight {
+    background-color: #ffd90f;
+    color: #333;
+}

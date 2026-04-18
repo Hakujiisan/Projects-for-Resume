@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Main Characters - SpongeBob SquarePants</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"/>
+  <link rel="stylesheet" href="../style.css">
+  <link rel="stylesheet" href="cartoon.css"/>
+  <link href="https://fonts.googleapis.com/css2?family=Luckiest+Guy&display=swap" rel="stylesheet">
+  
+  <!-- Force header colors -->
+  <style>
+    header {
+        background: #f0e68c !important;
+    }
+    body.night header {
+        background: #bfb66a !important;
+    }
+  </style>
+</head>
+<body class="page-cartoon">
+
+  <!-- IDENTICAL HEADER TO HISTORY PAGE -->
+  <header>
+     <img src="../assets/sponge_bob.png" alt="Spongebob">
+    <a href="../home&history/home.html">Home</a>
+    <a href="../home&history/history.html">History</a>
+    <a href="../merch&places/merch.html">Merch</a>
+    <a href="../merch&places/places.html">Places</a>
+    <a href="../description&cartoon/description.html">Description</a>
+    <a href="cartoon.html" class="active">Cartoon</a>
+    <a href="../culture&review/culture.html">Culture</a>
+    <a href="../culture&review/review.html">Review</a>
+    <button id="theme-toggle" aria-label="Toggle night mode">🌙</button>
+  </header>
+
+  <!-- Carousel -->
+  <section class="container-fluid px-0 mt-3">
+    <div id="characterCarousel" class="carousel slide" data-bs-ride="carousel">
+      <div class="carousel-indicators">
+        <button type="button" data-bs-target="#characterCarousel" data-bs-slide-to="0" class="active"></button>
+        <button type="button" data-bs-target="#characterCarousel" data-bs-slide-to="1"></button>
+        <button type="button" data-bs-target="#characterCarousel" data-bs-slide-to="2"></button>
+        <button type="button" data-bs-target="#characterCarousel" data-bs-slide-to="3"></button>
+        <button type="button" data-bs-target="#characterCarousel" data-bs-slide-to="4"></button>
+        <button type="button" data-bs-target="#characterCarousel" data-bs-slide-to="5"></button>
+      </div>
+      <div class="carousel-inner">
+        <div class="carousel-item active">
+          <img src="../front_assignment2/bob.jpg" class="d-block w-100 carousel-img" alt="SpongeBob">
+          <div class="carousel-caption d-none d-md-block bg-dark bg-opacity-50 rounded"><h5>SpongeBob</h5><p>Optimistic fry cook</p></div>
+        </div>
+        <div class="carousel-item">
+          <img src="../front_assignment2/patrick.jpg" class="d-block w-100 carousel-img" alt="Patrick">
+          <div class="carousel-caption d-none d-md-block bg-dark bg-opacity-50 rounded"><h5>Patrick</h5><p>Best friend & neighbor</p></div>
+        </div>
+        <div class="carousel-item">
+          <img src="../front_assignment2/sqrd.jpg" class="d-block w-100 carousel-img" alt="Squidward">
+          <div class="carousel-caption d-none d-md-block bg-dark bg-opacity-50 rounded"><h5>Squidward</h5><p>Clarinet & cashier</p></div>
+        </div>
+        <div class="carousel-item">
+          <img src="../front_assignment2/sandy.jpg" class="d-block w-100 carousel-img" alt="Sandy">
+          <div class="carousel-caption d-none d-md-block bg-dark bg-opacity-50 rounded"><h5>Sandy</h5><p>Scientist & karate expert</p></div>
+        </div>
+        <div class="carousel-item">
+          <img src="../front_assignment2/krabs.jpg" class="d-block w-100 carousel-img" alt="Mr. Krabs">
+          <div class="carousel-caption d-none d-md-block bg-dark bg-opacity-50 rounded"><h5>Mr. Krabs</h5><p>Owner of the Krusty Krab</p></div>
+        </div>
+        <div class="carousel-item">
+          <img src="../front_assignment2/plankton.jpg" class="d-block w-100 carousel-img" alt="Plankton">
+          <div class="carousel-caption d-none d-md-block bg-dark bg-opacity-50 rounded"><h5>Plankton</h5><p>Rival mastermind</p></div>
+        </div>
+      </div>
+      <button class="carousel-control-prev" type="button" data-bs-target="#characterCarousel" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon"></span><span class="visually-hidden">Previous</span>
+      </button>
+      <button class="carousel-control-next" type="button" data-bs-target="#characterCarousel" data-bs-slide="next">
+        <span class="carousel-control-next-icon"></span><span class="visually-hidden">Next</span>
+      </button>
+    </div>
+  </section>
+
+  <!-- Intro + Mini Nav -->
+  <div class="container mt-4">
+    <section class="card p-4 mb-4" id="intro">
+      <h1 class="text-center mb-3">Main Characters</h1>
+      <p class="text-center">Meet the core crew of <strong>SpongeBob SquarePants</strong>. Click a name to jump to a character. Then pick your favorite!</p>
+      <div class="mini-nav d-flex justify-content-center flex-wrap gap-2 my-3">
+        <a href="#spongebob" class="btn btn-outline-primary btn-sm">SpongeBob</a>
+        <a href="#patrick" class="btn btn-outline-primary btn-sm">Patrick</a>
+        <a href="#squidward" class="btn btn-outline-primary btn-sm">Squidward</a>
+        <a href="#sandy" class="btn btn-outline-primary btn-sm">Sandy</a>
+        <a href="#krabs" class="btn btn-outline-primary btn-sm">Mr. Krabs</a>
+        <a href="#plankton" class="btn btn-outline-primary btn-sm">Plankton</a>
+      </div>
+    </section>
+
+    <!-- Cards -->
+    <section id="characters">
+      <div class="row g-4">
+        <div class="col-12 col-md-6 col-lg-4">
+          <article class="card character-card h-100" id="spongebob">
+            <div class="card-body text-center">
+              <img src="../front_assignment2/bob.jpg" alt="SpongeBob" class="character-img rounded-circle mb-3"/>
+              <h3 class="card-title">SpongeBob SquarePants</h3>
+              <p class="card-text text-muted fst-italic">Optimistic fry cook at the Krusty Krab.</p>
+              <ul class="list-unstyled text-start">
+                <li>✓ Endlessly positive</li>
+                <li>✓ Loves jellyfishing</li>
+                <li>✓ Catchphrase: "I'm ready!"</li>
+              </ul>
+            </div>
+          </article>
+        </div>
+
+        <div class="col-12 col-md-6 col-lg-4">
+          <article class="card character-card h-100" id="patrick">
+            <div class="card-body text-center">
+              <img src="../front_assignment2/patrick.jpg" alt="Patrick" class="character-img rounded-circle mb-3"/>
+              <h3 class="card-title">Patrick Star</h3>
+              <p class="card-text text-muted fst-italic">SpongeBob's best friend.</p>
+              <ul class="list-unstyled text-start">
+                <li>✓ Loyal friend</li>
+                <li>✓ Not the sharpest tool</li>
+                <li>✓ Lives under a rock</li>
+              </ul>
+            </div>
+          </article>
+        </div>
+
+        <div class="col-12 col-md-6 col-lg-4">
+          <article class="card character-card h-100" id="squidward">
+            <div class="card-body text-center">
+              <img src="../front_assignment2/sqrd.jpg" alt="Squidward" class="character-img rounded-circle mb-3"/>
+              <h3 class="card-title">Squidward Tentacles</h3>
+              <p class="card-text text-muted fst-italic">Cashier & clarinet player.</p>
+              <ul class="list-unstyled text-start">
+                <li>✓ Sarcastic and artsy</li>
+                <li>✓ Values peace & quiet</li>
+                <li>✓ Secretly cares</li>
+              </ul>
+            </div>
+          </article>
+        </div>
+
+        <div class="col-12 col-md-6 col-lg-4">
+          <article class="card character-card h-100" id="sandy">
+            <div class="card-body text-center">
+              <img src="../front_assignment2/sandy.jpg" alt="Sandy" class="character-img rounded-circle mb-3"/>
+              <h3 class="card-title">Sandy Cheeks</h3>
+              <p class="card-text text-muted fst-italic">Scientist & karate expert.</p>
+              <ul class="list-unstyled text-start">
+                <li>✓ Inventive & brave</li>
+                <li>✓ Karate with SpongeBob</li>
+                <li>✓ Loves science challenges</li>
+              </ul>
+            </div>
+          </article>
+        </div>
+
+        <div class="col-12 col-md-6 col-lg-4">
+          <article class="card character-card h-100" id="krabs">
+            <div class="card-body text-center">
+              <img src="../front_assignment2/krabs.jpg" alt="Mr. Krabs" class="character-img rounded-circle mb-3"/>
+              <h3 class="card-title">Mr. Krabs</h3>
+              <p class="card-text text-muted fst-italic">Owner of the Krusty Krab.</p>
+              <ul class="list-unstyled text-start">
+                <li>✓ Loves money</li>
+                <li>✓ Secret formula</li>
+                <li>✓ Father figure to SpongeBob</li>
+              </ul>
+            </div>
+          </article>
+        </div>
+
+        <div class="col-12 col-md-6 col-lg-4">
+          <article class="card character-card h-100" id="plankton">
+            <div class="card-body text-center">
+              <img src="../front_assignment2/plankton.jpg" alt="Plankton" class="character-img rounded-circle mb-3"/>
+              <h3 class="card-title">Plankton</h3>
+              <p class="card-text text-muted fst-italic">Rival mastermind.</p>
+              <ul class="list-unstyled text-start">
+                <li>✓ Genius but tiny</li>
+                <li>✓ Always schemes</li>
+                <li>✓ Has computer wife Karen</li>
+              </ul>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Favorite form -->
+    <section class="card p-4 mt-4" id="favorite">
+      <h2 class="text-center mb-3">Pick Your Favorite Character</h2>
+      <form class="mx-auto" style="max-width: 600px;">
+        <fieldset class="mb-3 p-3 border rounded">
+          <legend class="w-auto px-2">Choose one:</legend>
+          <div class="row">
+            <div class="col-md-6">
+              <div class="form-check mb-2"><input class="form-check-input" type="radio" name="favorite" id="spongebobRadio" value="SpongeBob"><label class="form-check-label" for="spongebobRadio">SpongeBob</label></div>
+              <div class="form-check mb-2"><input class="form-check-input" type="radio" name="favorite" id="patrickRadio" value="Patrick"><label class="form-check-label" for="patrickRadio">Patrick</label></div>
+              <div class="form-check mb-2"><input class="form-check-input" type="radio" name="favorite" id="squidwardRadio" value="Squidward"><label class="form-check-label" for="squidwardRadio">Squidward</label></div>
+            </div>
+            <div class="col-md-6">
+              <div class="form-check mb-2"><input class="form-check-input" type="radio" name="favorite" id="sandyRadio" value="Sandy"><label class="form-check-label" for="sandyRadio">Sandy</label></div>
+              <div class="form-check mb-2"><input class="form-check-input" type="radio" name="favorite" id="krabsRadio" value="Mr. Krabs"><label class="form-check-label" for="krabsRadio">Mr. Krabs</label></div>
+              <div class="form-check mb-2"><input class="form-check-input" type="radio" name="favorite" id="planktonRadio" value="Plankton"><label class="form-check-label" for="planktonRadio">Plankton</label></div>
+            </div>
+          </div>
+        </fieldset>
+        <div class="mb-3">
+          <label for="why" class="form-label">Why is this your favorite?</label>
+          <textarea class="form-control" id="why" rows="4" placeholder="Short reason (optional)"></textarea>
+        </div>
+        <div class="d-grid">
+          <button type="submit" class="btn btn-primary btn-lg">Submit</button>
+        </div>
+      </form>
+    </section>
+  </div>
+
+  <footer>
+    <div>Designed by Motivation Time members:</div>
+    <div>Zhandaulet Ermekov</div>
+    <div>Alan Kissamenov</div>
+    <div>Danila Bussygin</div>
+    <div>Dana Bekbosyn</div>
+  </footer>
+
+  <div class="progress-wrap" aria-hidden="true">
+    <div class="progress-bar" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0"></div>
+  </div>
+
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="js/unified.js"></script>
+  <script src="../home&history/home.js"></script>
+  <script src="../script.js"></script>
+
+</body>
+</html>

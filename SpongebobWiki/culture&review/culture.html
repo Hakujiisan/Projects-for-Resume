@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Culture</title>
+    <link rel="stylesheet" href="../style.css">
+    <link rel="stylesheet" href="culture.css"> 
+
+    <script>
+      (() => {
+        try {
+          const saved = localStorage.getItem('theme');
+          const prefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+          const theme = saved || (prefersDark ? 'dark' : 'light');
+          document.documentElement.setAttribute('data-theme', theme);
+        } catch (e) {}
+      })();
+    </script>
+</head>
+<body>
+    <header>
+        <img src="../assets/sponge_bob.png" alt="Spongebob">
+        <a href="../home&history/home.html">Home</a>
+        <a href="history.html">History</a>
+        <a href="../merch&places/merch.html">Merch</a>
+        <a href="../merch&places/places.html">Places</a>
+        <a href="../description&cartoon/description.html">Description</a>
+        <a href="../description&cartoon/cartoon.html">Cartoon</a>
+        <a href="../culture&review/culture.html"  class="active">Culture</a>
+        <a href="../culture&review/review.html">Review</a>
+        <a href="../user.html" id="account-link" style="display:none"></a>
+        <button id="theme-toggle" aria-label="Toggle night mode">🌙</button>
+    </header>
+    
+
+    <div class="main-content">
+        <h1>Cultural importance of Spongebob</h1>
+
+        <hr>
+        
+      <!--
+       <button id="themeToggle" class="btn" aria-pressed="false">Switch Day/Night</button>
+      -->
+        <div class="container">
+            <div class="legacy2">
+                <h3>Wax sculpture</h3>
+                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/47/Wax_Museum_Plus_%286344827249%29.jpg/1024px-Wax_Museum_Plus_%286344827249%29.jpg" alt="">
+                <p>In July 2009, Madame Tussauds wax museum in New York launched a wax sculpture of SpongeBob in celebration of the series' 10th anniversary. SpongeBob became the first animated character sculpted entirely out of wax.</p>
+                <button><a href="">To the page</a></button>
+            </div>
+            <div class="legacy2">
+                <h3>Egypt</h3>
+                <img src="https://i.guim.co.uk/img/static/sys-images/Guardian/About/General/2013/5/27/1369653924472/SpongeBob-merchandise-in--010.jpg?width=465&dpr=1&s=none&crop=none" alt="">
+                <p>After the Egyptian Revolution of 2011, SpongeBob became a fashion phenomenon at Cairo’s Tahrir Square, appearing on hijabs, t-shirts, and even boxer shorts.</p>
+                <button><a href="">To the page</a></button>
+            </div>
+            <div class="legacy2">
+                <h3>Krusty Krab</h3>
+                <img src="https://static-cdn.toi-media.com/www/uploads/2014/06/krusty-2.jpg" alt="">
+                <p>In 2014, a SpongeBob-themed restaurant modeled after the Krusty Krab opened in Ramallah, Palestine, serving Krabby Patties.</p>
+                <button><a href="">To the page</a></button>
+            </div>
+            <div class="legacy2">
+                <h3>Science</h3>
+                <img src="https://pbs.twimg.com/media/Fwhc-C1WcAEBQ9V.png" alt="">
+                <p>In 2019, a new species of sea sponge, Clathria hillenburgi, was named in honor of Stephen Hillenburg, and in 2020, a sea star Astrolirus patricki was named after Patrick Star.</p>
+                <button><a href="">To the page</a></button>
+            </div>
+            <div class="legacy2">
+                <h3>Memes</h3>
+                <img src="https://i.pinimg.com/564x/f4/09/ed/f409ed05ef74a46fcf7f9502ad45a10c.jpg" alt="">
+                <p>SpongeBob memes have become a dominant force in internet culture, with millions of followers on dedicated meme subreddits.</p>
+                <button><a href="">To the page</a></button>
+            </div>
+            <div class="legacy2">
+                <h3>MORE MEMES</h3>
+                <img src="https://static0.thegamerimages.com/wordpress/wp-content/uploads/2025/03/mixcollage-12-mar-2025-01-51-pm-2259-1.jpg?w=1600&h=900&fit=crop" alt="">
+                <p>Some of the most famous memes include “Mocking SpongeBob,” an exhausted SpongeBob, and a disheveled Squidward, with newer trends like “Freakbob” and the 2024 “sad hamster meme.”</p>
+                <button><a href="">To the page</a></button>
+            </div>
+            <div class="legacy2">
+                <h3>SWEET VICTORY</h3>
+                <iframe width="560" height="315" src="https://www.youtube.com/embed/eDQXG7swq2g?si=LJXpHfoi2gWtvsul" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                <p>More than 1.2 million fans signed a petition for “Sweet Victory” to be performed at Super Bowl LIII, though the halftime show disappointed many by only featuring a short clip.</p>
+                <button><a href="">To the page</a></button>
+            </div>
+        </div>
+        
+
+      <!-- Добавь data-accordion="single", если нужен режим «только один открыт» -->
+      <div class="accordion" id="faq" data-accordion="multiple">
+        <!-- Item 1 -->
+        <div class="acc-item">
+          <button class="acc-trigger" id="acc-1" aria-controls="panel-1" aria-expanded="false">
+            <p> In what year SpongeBob came out? </p>
+            <svg class="acc-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+              <path d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </button>
+          <div class="acc-panel" id="panel-1" role="region" aria-labelledby="acc-1" hidden>
+            <div class="panel-inner">
+              <p> SpongeBob SquarePants first aired on May 1, 1999, as a sneak peek after the 1999 Kids' Choice Awards. </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Item 2 -->
+        <div class="acc-item">
+          <button class="acc-trigger" id="acc-2" aria-controls="panel-2" aria-expanded="false">
+            <p> What is the average length of Sponge Bob episodes? </p>
+            <svg class="acc-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+              <path d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </button>
+          <div class="acc-panel" id="panel-2" role="region" aria-labelledby="acc-2" hidden>
+            <div class="panel-inner">
+             <p>  The average SpongeBob episode is about 22 minutes long. </p>
+            </div>
+          </div> 
+        </div>
+
+        <!-- Item 3 -->
+        <div class="acc-item">
+          <button class="acc-trigger" id="acc-3" aria-controls="panel-3" aria-expanded="false">
+            <p> What gender is Sponge Bob? </p>
+            <svg class="acc-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+              <path d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </button>
+          <div class="acc-panel" id="panel-3" role="region" aria-labelledby="acc-3" hidden>
+            <div class="panel-inner">
+              <p> SpongeBob SquarePants is a male character, who uses "he/him" pronouns. </p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+<!--
+      <div class="date"> </div>
+      <div class="soundbox">
+        <button id="playSoundBtn" class="btn-like">Play sound</button>
+      </div>
+-->
+      <div class="clipboard">
+        <h2>Copy a link for this Website</h2>
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+        <div class="copy-box">
+          <p class="text-snippet" id="snippet1">http://127.0.0.1:5500/culture&review/culture.html</p>
+          <button class="copy-btn" data-target="#snippet1">
+            Copy
+          </button>
+        </div>
+<!--
+        <div class="copy-box">
+          <p class="text-snippet" id="snippet2">Today your lucky number is: 15</p>
+          <button class="copy-btn" data-target="#snippet2">
+            Copy
+          </button>
+        </div>
+-->
+      </div>
+
+
+      <div id="tooltip" class="hidden">Copied to clipboard!</div>
+
+      <div class="gallery">
+        <img class="lazy" data-src="https://static0.moviewebimages.com/wordpress/wp-content/uploads/article/G8gB5gNmHR6rDHvx70txYkytJxigu3.jpg" alt="Image 1" />
+        <img class="lazy" data-src="https://www.sideshow.com/cdn-cgi/image/height=850,quality=90,f=auto/https://www.sideshow.com/storage/product-images/914296/hot-toys-spongebob-squarepants-spongebob-cosbaby-collectible-figure-gallery-67ddb0462226d.jpg" alt="Image 2" />
+        <img class="lazy" data-src="https://i.pinimg.com/736x/37/17/c7/3717c7b3df5dca58e643c1989f40badc.jpg" alt="Image 3" />
+        <img class="lazy" data-src="https://media.printler.com/media/photo/149968.jpg?rmode=crop&width=638&height=900" alt="Image 4" />
+        <img class="lazy" data-src="https://s.yimg.com/ny/api/res/1.2/3oWHH.f09QXComYnOLSHEw--/YXBwaWQ9aGlnaGxhbmRlcjt3PTEyNDI7aD05MzI7Y2Y9d2VicA--/https://s.yimg.com/os/creatr-uploaded-images/2024-08/608883c0-5587-11ef-bd9f-5ebc1c086443" alt="Image 5" />
+      </div>
+
+ 
+    
+ 
+
+    </div>
+
+    <footer>
+        <div>Designed by Motivation Time members:</div>
+        <div>Zhandaulet Ermekov</div>
+        <div>Alan Kissamenov</div>
+        <div>Danila Bussygin</div>
+        <div>Dana Bekbosyn</div>
+    </footer>
+    <script src="culture.js"></script>
+</body>
+</html>

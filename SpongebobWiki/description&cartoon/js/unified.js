@@ -558,7 +558,7 @@ function initGifsFeatures() {
 }
 
 async function loadGifs() {
-    const API_KEY = 'AIzaSyCQaEFcAOchzzxGrgsLhXl1ruFGVpbWCAo';
+    const API_KEY = "YOUR_API_KEY";
     const tag = 'spongebob';
 
     async function fetchGif() {
